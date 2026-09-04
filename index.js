@@ -49,6 +49,10 @@ async function getNearbyRestaurants() {
 
 async function main(){
 
+	// TODO: Improve UI
+	// TODO: Allow parameters for maxResultCount + rankPreference + Location
+	// TODO: Maybe use react
+	// TODO: display a google map embed of the chosen restaurant
 	const els = {
 		choiceDiv: document.querySelector('div.choice'),
 		choiceP: document.querySelector('p.choice'),
