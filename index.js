@@ -53,6 +53,9 @@ async function main(){
 	// TODO: Allow parameters for maxResultCount + rankPreference + Location
 	// TODO: Maybe use react
 	// TODO: display a google map embed of the chosen restaurant
+	// TODO: Add link to choosener
+	// TODO: Add feature to cross out restraunts from list
+	// TODO: Add feature to refresh list
 	const els = {
 		choiceDiv: document.querySelector('div.choice'),
 		choiceP: document.querySelector('p.choice'),
