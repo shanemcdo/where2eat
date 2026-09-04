@@ -58,7 +58,9 @@ async function main(){
 	// TODO: Add feature to refresh list
 	const els = {
 		choiceDiv: document.querySelector('div.choice'),
-		choiceP: document.querySelector('p.choice'),
+		choiceName: document.getElementById('choice-name'),
+		choiceAddress: document.getElementById('choice-address'),
+		choiceLink: document.getElementById('choice-link'),
 		choices: document.getElementById('choices'),
 		places: document.getElementById('places'),
 		chooseButton: document.getElementById('choose-button'),
@@ -75,7 +77,10 @@ async function main(){
 	els.chooseButton.addEventListener('click', () => {
 		els.choices.classList.toggle('hidden');
 		els.choiceDiv.classList.toggle('hidden');
-		els.choiceP.innerText = getRandomChoice(places).displayName;
+		const choice = getRandomChoice(places);
+		els.choiceName.innerText = choice.displayName;
+		els.choiceAddress.innerText = choice.formattedAddress;
+		els.choiceLink.href = choice.googleMapsURI;
 	});
 
 	els.backButton.addEventListener('click', () => {

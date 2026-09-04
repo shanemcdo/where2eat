@@ -10,12 +10,15 @@
     <body>
 		<h1>Where2Eat</h1>
 		<h2 id=subtitle>Helps decide between local restaurants</h2>
-		<h3 >restaurants near you:</h3>
 		<div class="hidden choice">
-			<p class=choice></p>
+			<h1 id=choice-name></h1>
+			<a id="choice-link" href="">
+				<p id=choice-address></p>
+			</a>
 			<Button id=back-button>Back</Button>
 		</div>
 		<div id=choices>
+			<h3 >restaurants near you:</h3>
 			<ul id=places></ul>
 			<Button id=choose-button>Choose</Button>
 		</div>
