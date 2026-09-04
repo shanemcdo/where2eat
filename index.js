@@ -14,6 +14,11 @@ async function getLocation(){
 	});
 }
 
+function getRandomChoice(list) {
+	const i = Math.floor(Math.random() * list.length);
+	return list[i];
+}
+
 async function getNearbyRestaurants() {
 	const {Place, SearchNearbyRankPreference} = await google.maps.importLibrary("places");
 
@@ -43,13 +48,34 @@ async function getNearbyRestaurants() {
 }
 
 async function main(){
+
+	const els = {
+		choiceDiv: document.querySelector('div.choice'),
+		choiceP: document.querySelector('p.choice'),
+		choices: document.getElementById('choices'),
+		places: document.getElementById('places'),
+		chooseButton: document.getElementById('choose-button'),
+		backButton: document.getElementById('back-button'),
+	};
+
 	const places = await getNearbyRestaurants();
-
-	console.log(places);
-
 	for(const place of places) {
-		console.log(place.displayName, place.formattedAddress);
+		const li = document.createElement('li')
+		li.innerText = place.displayName
+		els.places.appendChild(li);
 	}
+
+	els.chooseButton.addEventListener('click', () => {
+		els.choices.classList.toggle('hidden');
+		els.choiceDiv.classList.toggle('hidden');
+		els.choiceP.innerText = getRandomChoice(places).displayName;
+	});
+
+	els.backButton.addEventListener('click', () => {
+		els.choices.classList.toggle('hidden');
+		els.choiceDiv.classList.toggle('hidden');
+	});
+
 }
 
 main();
