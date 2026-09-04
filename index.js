@@ -56,6 +56,7 @@ async function main(){
 	// TODO: Add link to choosener
 	// TODO: Add feature to cross out restraunts from list
 	// TODO: Add feature to refresh list
+	// TODO: Get actual API Key
 	const els = {
 		choiceDiv: document.querySelector('div.choice'),
 		choiceName: document.getElementById('choice-name'),
