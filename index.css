@@ -46,6 +46,11 @@ p {
     color: var(--text-muted);
 }
 
+#subtitle {
+	color: var(--text-muted);
+	font-size: 1.1em;
+}
+
 
 .hidden{
     display: none;
